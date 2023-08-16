@@ -24,10 +24,15 @@ items = [
 
 
 def home(request):
-    text = """<h1>"Изучаем django"</h1>
-              <strong>Автор</strong>: <i>Шиховцов В.В.</i>
-           """
-    return HttpResponse(text)
+    # text = """<h1>"Изучаем django"</h1>
+    #           <strong>Автор</strong>: <i>Шиховцов В.В.</i>
+    #        """
+    # return HttpResponse(text)
+    context = {
+        "name": "Петров Иван Николаевич",
+        "email": "my_mail@mail.ru"
+    }
+    return render(request, "index.html", context)        
 
 
 def about(request):
@@ -67,3 +72,4 @@ def items_list(request):
         result += f"""<li><a href="/item/{item['id']}">{item['name']}</a></li>"""
     result += '</ol>'
     return HttpResponse(result)
+
