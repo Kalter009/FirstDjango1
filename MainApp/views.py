@@ -67,9 +67,13 @@ def get_item(request, id):
 #   <li> .... </li>
 # <ol>
 def items_list(request):
-    result = "<h2>Список товаров</h2><ol>"
-    for item in items:
-        result += f"""<li><a href="/item/{item['id']}">{item['name']}</a></li>"""
-    result += '</ol>'
-    return HttpResponse(result)
+    # result = "<h2>Список товаров</h2><ol>"
+    # for item in items:
+    #     result += f"""<li><a href="/item/{item['id']}">{item['name']}</a></li>"""
+    # result += '</ol>'
+    # return HttpResponse(result)
 
+    context = {
+        "items": items
+    }
+    return render(request, "items-list.html", context) 
