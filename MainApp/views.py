@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
-
+from models import Item
 # Create your views here.
 
 author = {
@@ -12,13 +12,13 @@ author = {
 
 }
 
-items = [
-   {"id": 1, "name": "Кроссовки abibas" ,"quantity":5},
-   {"id": 2, "name": "Куртка кожаная" ,"quantity":2},
-   {"id": 5, "name": "Coca-cola 1 литр" ,"quantity":12},
-   {"id": 7, "name": "Картофель фри" ,"quantity":0},
-   {"id": 8, "name": "Кепка" ,"quantity":124},
-]
+#items = [
+ #  {"id": 1, "name": "Кроссовки abibas" ,"quantity":5},
+  # {"id": 2, "name": "Куртка кожаная" ,"quantity":2},
+   #{"id": 5, "name": "Coca-cola 1 литр" ,"quantity":12},
+   #{"id": 7, "name": "Картофель фри" ,"quantity":0},
+   #{"id": 8, "name": "Кепка" ,"quantity":124},
+#]
 
 
 
@@ -66,6 +66,6 @@ def get_item(request, item_id):
 
 def items_list(request):
     context = {
-        "items": items
+        "items": Item
     }
     return render(request, "items-list.html", context) 
