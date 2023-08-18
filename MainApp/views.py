@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
-from models import Item
+#from models import Item
 # Create your views here.
 
 author = {
@@ -55,7 +55,7 @@ def about(request):
 # url /item/2
 def get_item(request, item_id):
     """ По указанному id возвращает имя и количество"""
-    item = next((item for item in items if item['id'] == item_id), None)
+    item = Item.objects.get(pk=item_id)
     if item:
         context = {
             "item": item
