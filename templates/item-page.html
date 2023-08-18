@@ -10,8 +10,9 @@
     </header>
     <h1>{{ item.name }}</h1>
     <div>
-      
-        Количество: {{ item.count | default: "Товар отсутствует на складе"}}
+        Количество: {{ item.count | default:"Товар отсутствует на складе"}}
+    </div>
+    <div>
         {{item.description}}
       
     </div>
