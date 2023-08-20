@@ -2,14 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{title}}</title>
     {%block style%}
     {%endblock%} 
 </head>
 <body>
-
-
     <main>
+        {% include 'header.html' %}
         {% block content %}
         {% endblock %}
     </main>
